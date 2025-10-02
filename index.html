@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Revive</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PF Din Stencil Font -->
+    <link href="https://fonts.cdnfonts.com/css/pf-din-stencil" rel="stylesheet">
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ==================== LANDING SECTION ==================== -->
+    <section id="landing" class="landing-section">
+        <!-- Video Background Container -->
+        <div class="video-container">
+            <!-- CUSTOMIZE: Update paths to point to your Videos folder -->
+            <!-- Example: If your video is named "background.mp4" in Videos folder, use: Videos/background.mp4 -->
+            <video class="background-video" autoplay muted loop playsinline preload="auto">
+                <source src="/Videos/Cover Page.mp4" type="video/mp4">
+                <source src="/Videos/Cover Page.mp4" type="video/webm">
+                <source src="/Videos/Cover Page.mp4" type="video/quicktime">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Main Content Container -->
+        <div class="content">
+            <!-- CUSTOMIZE: Change your title text here -->
+            <!-- First two letters will be colored #f36e48 -->
+            <h1 class="title"><span class="title-accent">.re</span>vive</h1>
+            
+            <!-- CUSTOMIZE: Change your subtitle text here -->
+            <p class="subtitle">Re-thinking Informality in Informal Settlements</p>
+        </div>
+
+        <!-- Bouncing Arrow (appears after all elements load) -->
+        <div class="scroll-arrow">
+            <div class="arrow-circle">
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== PHOTO GALLERY SECTION ==================== -->
+    <section id="gallery" class="gallery-section">
+        <div class="grid-container">
+            <!-- Minimalist page title -->
+            <h1 class="page-title">Sangam Vihar at a Glance</h1>
+            
+            <!-- Photo Grid - 2 rows x 5 columns -->
+            <div class="photo-grid">
+                <!-- Row 1 -->
+                <div class="photo-item" data-index="0">
+                    <img src="/Images/Photos for Introduction/IMG_9273.jpg" alt="Photo 1" loading="lazy">
+                </div>
+                <div class="photo-item" data-index="1">
+                    <img src="/Images/Photos for Introduction/IMG_9297.jpg" alt="Photo 2" loading="lazy">
+                </div>
+                <div class="photo-item" data-index="2">
+                    <img src="/Images/Photos for Introduction/IMG_9303.jpg" alt="Photo 3" loading="lazy">
+                </div>
+                <div class="photo-item" data-index="3">
+                    <img src="/Images/Photos for Introduction/IMG_9305.jpg" alt="Photo 4" loading="lazy">
+                </div>
+                <div class="photo-item" data-index="4">
+                    <img src="/Images/Photos for Introduction/IMG_9316.jpg" alt="Photo 5" loading="lazy">
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="photo-item" data-index="5">
+                    <img src="/Images/Photos for Introduction/IMG_9340.jpg" alt="Photo 6" loading="lazy">
+                </div>
+                <div class="photo-item" data-index="6">
+                    <img src="/Images/Photos for Introduction/IMG_9346.jpg" alt="Photo 7" loading="lazy">
+                </div>
+                <div class="photo-item" data-index="7">
+                    <img src="/Images/Photos for Introduction/IMG_9359.jpg" alt="Photo 8" loading="lazy">
+                </div>
+                <div class="photo-item" data-index="8">
+                    <img src="/Images/Photos for Introduction/IMG_9372.jpg" alt="Photo 9" loading="lazy">
+                </div>
+                <div class="photo-item" data-index="9">
+                    <img src="/Images/Photos for Introduction/IMG_9380.jpg" alt="Photo 10" loading="lazy">
+                </div>
+            </div>
+
+            
+            <!-- Bouncing Arrow for Gallery (appears 1 second after all images load) -->
+            <div class="gallery-scroll-arrow">
+                <div class="gallery-arrow-circle">
+                    <svg class="gallery-arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!--=========================================================================================================================================-->
+    <!--=========================================================================================================================================-->
+    <!--=========================================================================================================================================-->
+    <!--=========================================================================================================================================-->
+
+    <!-- ==================== TWO IMAGES SECTION ==================== -->
+
+    <section id="two-images" class="two-images-section">
+        <!-- Container for two images -->
+        <div class="two-images-container">
+            <!-- First Image -->
+            <div class="image-box image-left">
+                <!-- CUSTOMIZE: Update path to your first image -->
+                <img src="/Images for Current Conditions/Current Condition.png" alt="Comparison Image 1" class="comparison-img">
+            </div>
+            
+            <!-- Second Image -->
+            <div class="image-box image-right">
+                <!-- CUSTOMIZE: Update path to your second image -->
+                <img src="/Images for Current Conditions/Most Common Prposal Massing.png" alt="Comparison Image 2" class="comparison-img">
+            </div>
+        </div>
+        
+        <!-- Bouncing Arrow -->
+        <div class="two-images-scroll-arrow">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        
+        <!-- Reality Check Text -->
+        <p class="reality-check-text">Reality Check</p>
+    </section>
+
+
+    <!--=========================================================================================================================================-->
+    <!--=========================================================================================================================================-->
+    <!--=========================================================================================================================================-->
+
+    <!-- ==================== SECOND VIDEO TRANSITION SECTION ==================== -->
+
+    <section id="video-section" class="video-section">
+        <!-- Video Background Container -->
+        <div class="video-section-container">
+            <video class="section-video" muted playsinline preload="auto">
+                <!-- CUSTOMIZE: Update paths to point to your Videos folder -->
+                <source src="/Videos/Second Transition.mp4" type="video/mp4">
+                <source src="/Videos/Second Transition.mp4" type="video/webm">
+                <source src="/Videos/Second Transition.mp4" type="video/quicktime">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Bouncing Arrow -->
+        <div class="video-section-arrow">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        
+        <!-- Understanding the Site Text -->
+        <p class="video-section-text">Understanding the Site</p>
+    </section>
+    
+
+
+    <!--=========================================================================================================================================-->
+    <!--=========================================================================================================================================-->
+    <!--=========================================================================================================================================-->
+
+    <!-- ==================== Zoomed Out Site Maps Overlays ==================== -->
+    
+    <section id="overlay-images" class="overlay-images-section">
+        <!-- Container for overlaying images -->
+        <div class="overlay-container">
+            <!-- First Image (Bottom Layer) -->
+            <div class="overlay-image-wrapper layer-1">
+                <!-- CUSTOMIZE: Update path to your first overlay image -->
+                <img src="/Site Images/Zoomed Out Map.png" alt="Overlay Image 1" class="overlay-img">
+            </div>
+            
+            <!-- Second Image (Middle Layer) -->
+            <div class="overlay-image-wrapper layer-2">
+                <!-- CUSTOMIZE: Update path to your second overlay image -->
+                <img src="/Site Images/Zoomed Out Text 1.png" alt="Overlay Image 2" class="overlay-img">
+            </div>
+            
+            <!-- Third Image (Top Layer) -->
+            <div class="overlay-image-wrapper layer-3">
+                <!-- CUSTOMIZE: Update path to your third overlay image -->
+                <img src="/Site Images/Zoomed Out Text 2.png" alt="Overlay Image 3" class="overlay-img">
+            </div>
+        </div>
+        
+        <!-- Bouncing Arrow -->
+        <div class="overlay-section-arrow">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+
+
+
+    <!-- ==================== LIGHTBOX FOR IMAGE VIEWING ==================== -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <img class="lightbox-image" src="" alt="Enlarged photo">
+    </div>
+
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+
+
+</body>
+</html>

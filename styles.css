@@ -1,0 +1,926 @@
+/* ==================== SINGLE PAGE WEBSITE STYLES ==================== */
+
+/* Basic Reset and Body Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ==================== LANDING SECTION ==================== */
+.landing-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #414042; /* Gray background */
+}
+
+/* ==================== VIDEO BACKGROUND ==================== */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    background: #414042;
+    /* Performance optimizations */
+    will-change: auto;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: videoFadeOut 2s ease-in-out 3s forwards;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    /* PERFORMANCE OPTIMIZATIONS FOR SMOOTH PLAYBACK */
+    transform: translate3d(0, 0, 0); /* Force GPU acceleration */
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: opacity; /* Only animate opacity, not transform */
+    /* Improve rendering quality */
+    image-rendering: auto;
+    -webkit-transform: translateZ(0); /* Safari optimization */
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+@keyframes videoFadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ==================== CONTENT CONTAINER ==================== */
+.content {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 2; /* Changed from 1 to 2 to ensure it's above video */
+}
+
+/* ==================== TITLE STYLING (PF DIN STENCIL) ==================== */
+.title {
+    /* CUSTOMIZE: PF Din Stencil font for title */
+    font-family: 'PF Din Stencil', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-out 6s forwards;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* ==================== SUBTITLE STYLING ==================== */
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-out 7s forwards;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ==================== TITLE ACCENT (FIRST TWO LETTERS) ==================== */
+.title-accent {
+    color: #f36e48;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== BOUNCING ARROW ==================== */
+.scroll-arrow {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease-out; /* Faster transition - 0.3s instead of 0.5s */
+    pointer-events: none;
+}
+
+.scroll-arrow.show {
+    /* Note: opacity is controlled by JavaScript based on scroll position */
+    animation: bounce 2s infinite;
+}
+
+.arrow-circle {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.scroll-arrow:hover .arrow-circle {
+    transform: scale(1.1);
+}
+
+.arrow-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ==================== GALLERY SCROLL ARROW (WHITE ARROW, ORANGE BACKGROUND) ==================== */
+.gallery-scroll-arrow {
+    position: relative;
+    margin-top: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-out; /* Faster transition - 0.3s instead of 0.5s */
+    pointer-events: none;
+}
+
+.gallery-scroll-arrow.show {
+    /* Note: opacity is controlled by JavaScript based on scroll position */
+    animation: bounce 2s infinite;
+}
+
+.gallery-arrow-circle {
+    width: 60px;
+    height: 60px;
+    background: #f36e48; /* Orange background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(243, 110, 72, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.gallery-scroll-arrow:hover .gallery-arrow-circle {
+    transform: scale(1.1);
+}
+
+.gallery-arrow-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* White arrow stroke for gallery */
+.gallery-arrow-icon path {
+    stroke: white;
+}
+
+/* ==================== PHOTO GALLERY SECTION ==================== */
+.gallery-section {
+    background: white;
+    min-height: 100vh;
+    padding: 40px 40px; /* Reduced top/bottom padding */
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+
+.grid-container {
+    max-width: 1800px; /* Increased from 1600px for bigger images */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers vertically within container */
+}
+
+/* ==================== MINIMALIST PAGE TITLE ==================== */
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 3rem; /* Reduced from 4rem */
+    text-align: center;
+    color: #333;
+    letter-spacing: 0.2em;
+    text-transform: lowercase;
+}
+
+/* ==================== PHOTO GRID LAYOUT ==================== */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px; /* Increased from 30px for bigger spacing */
+    width: 100%;
+    max-width: 1700px; /* Increased from 1500px for bigger images */
+    margin-bottom: 2rem; /* Reduced from 4rem */
+}
+
+/* ==================== INDIVIDUAL PHOTO ITEMS ==================== */
+.photo-item {
+    position: relative;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.photo-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ==================== LIGHTBOX ==================== */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================== LIGHTBOX CLOSE BUTTON ==================== */
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    line-height: 1;
+    padding: 0;
+}
+
+.lightbox-close:hover {
+    background: #f36e48;
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet */
+@media (max-width: 1200px) {
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 30px; /* Adjusted for tablet */
+        max-width: 1100px;
+    }
+    
+    .grid-container {
+        padding: 60px 30px;
+        max-width: 1200px;
+    }
+    
+    .gallery-section {
+        padding: 40px 30px;
+    }
+    
+    .title {
+        font-size: 3rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 600px;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .gallery-section {
+        padding: 30px 20px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .arrow-circle, .gallery-arrow-circle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .arrow-icon, .gallery-arrow-icon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .lightbox-close {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 400px;
+    }
+    
+    .page-title {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .gallery-section {
+        padding: 30px 15px;
+    }
+}
+
+
+
+/*======================================================================================================================================================*/
+/*======================================================================================================================================================*/
+
+
+/* ==================== TWO IMAGES : Current Conditions in Slum Section Begins ==================== */
+
+.two-images-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #414042;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 50px;
+}
+
+/* Two Images Container */
+.two-images-container {
+    display: flex;
+    gap: 80px; /* Increased gap for better spacing with bigger images */
+    max-width: 1800px; /* Increased container width */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual Image Box - EVEN BIGGER */
+.image-box {
+    flex: 1;
+    max-width: 850px; /* INCREASED from 700px to 850px */
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.image-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.comparison-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Two Images Section Arrow - WITH PROPER BOUNCING */
+.two-images-scroll-arrow {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.two-images-scroll-arrow.show {
+    opacity: 1;
+    pointer-events: auto;
+    animation: twoImagesBounce 2s infinite;
+}
+
+.two-images-scroll-arrow:hover {
+    background: #f36e48;
+}
+
+.two-images-scroll-arrow:hover svg path {
+    stroke: white;
+}
+
+/* Dedicated bounce animation for two images arrow */
+@keyframes twoImagesBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-8px);
+    }
+}
+
+/* Reality Check Text */
+.reality-check-text {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    z-index: 9;
+}
+
+.reality-check-text.show {
+    opacity: 1;
+}
+
+/* Responsive Design for Two Images Section */
+@media (max-width: 1400px) {
+    .image-box {
+        max-width: 700px;
+    }
+    
+    .two-images-container {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .image-box {
+        max-width: 600px;
+    }
+    
+    .two-images-container {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .two-images-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .image-box {
+        max-width: 100%;
+    }
+    
+    .two-images-section {
+        padding: 60px 20px;
+    }
+    
+    .reality-check-text {
+        font-size: 1rem;
+        bottom: 40px;
+    }
+    
+    .two-images-scroll-arrow {
+        bottom: 80px;
+    }
+}
+
+
+
+/*======================================================================================================================================================*/
+/*======================================================================================================================================================*/
+
+/* ==================== SECOND VIDEO TRANSITION SECTION ==================== */
+
+
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #414042;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video Container */
+.video-section-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    background: #414042;
+}
+
+.section-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+}
+
+/* Video fade-out class (applied via JavaScript) */
+.section-video.fade-out {
+    animation: videoFadeOut 2s ease-in-out forwards;
+}
+
+/* Video Section Arrow */
+.video-section-arrow {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.video-section-arrow.show {
+    opacity: 1;
+    pointer-events: auto;
+    animation: videoSectionBounce 2s infinite;
+}
+
+.video-section-arrow:hover {
+    background: #f36e48;
+}
+
+.video-section-arrow:hover svg path {
+    stroke: white;
+}
+
+/* Dedicated bounce animation for video section arrow */
+@keyframes videoSectionBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-8px);
+    }
+}
+
+/* Understanding the Site Text - UPDATED: BIGGER, CENTERED, SLIDE-UP */
+.video-section-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100px); /* Start below center */
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem; /* BIGGER - was 1.2rem */
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s ease; /* Smooth slide and fade */
+    text-align: center;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Text slide-up and fade-in when .show class is added */
+.video-section-text.show {
+    opacity: 1;
+    transform: translate(-50%, -50%); /* Move to center */
+}
+
+/* Responsive Design for Video Section */
+@media (max-width: 768px) {
+    .video-section-text {
+        font-size: 1.8rem; /* Smaller on mobile but still bigger than before */
+        white-space: normal; /* Allow wrapping on small screens */
+        max-width: 90%;
+    }
+    
+    .video-section-arrow {
+        bottom: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-section-text {
+        font-size: 1.5rem;
+    }
+}
+
+/*=======================================================================================================================================================*/
+/*=======================================================================================================================================================*/
+
+/* ==================== ZOOMED OUT SITE MAPS OVERALYS ==================== */
+
+.overlay-images-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #414042;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 50px;
+}
+
+/* Overlay Container - CENTERED */
+.overlay-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    aspect-ratio: 16/10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual Overlay Image Wrapper - HIDDEN BY DEFAULT */
+.overlay-image-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FIRST IMAGE - Slides up from bottom */
+.overlay-image-wrapper.layer-1 {
+    transform: translate(-50%, calc(-50% + 100px));
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.overlay-image-wrapper.layer-1.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* SECOND & THIRD IMAGES - Fade in only */
+.overlay-image-wrapper.layer-2,
+.overlay-image-wrapper.layer-3 {
+    transition: opacity 1.2s ease;
+}
+
+.overlay-image-wrapper.layer-2.visible,
+.overlay-image-wrapper.layer-3.visible {
+    opacity: 1;
+}
+
+/* Actual Image */
+.overlay-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* THIRD IMAGE - PULSING EFFECT */
+.overlay-image-wrapper.layer-3.pulsing {
+    animation: overlayPulse 2s ease-in-out infinite;
+}
+
+/* Pulsing animation - maintains centering */
+@keyframes overlayPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.85;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Overlay Section Arrow */
+.overlay-section-arrow {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.overlay-section-arrow.show {
+    opacity: 1;
+    pointer-events: auto;
+    animation: overlayArrowBounce 2s infinite;
+}
+
+.overlay-section-arrow:hover {
+    background: #f36e48;
+}
+
+.overlay-section-arrow:hover svg path {
+    stroke: white;
+}
+
+/* Bounce animation for arrow */
+@keyframes overlayArrowBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-8px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .overlay-container {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay-images-section {
+        padding: 60px 20px;
+    }
+    
+    .overlay-container {
+        width: 90%;
+        aspect-ratio: 4/3;
+    }
+    
+    .overlay-section-arrow {
+        bottom: 60px;
+    }
+    
+    /* Less dramatic pulse on mobile */
+    @keyframes overlayPulse {
+        0% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: translate(-50%, -50%) scale(1.03);
+            opacity: 0.9;
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-container {
+        width: 95%;
+        aspect-ratio: 1/1;
+    }
+    
+    .overlay-section-arrow {
+        bottom: 50px;
+    }
+}
