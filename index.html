@@ -15,37 +15,156 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!--=======================================================================================================================================================-->
+    <!--=======================================================================================================================================================-->
+    <!-- ==================== INTRO SECTION (NEW - BEFORE LANDING) ==================== -->
+
+    <section id="intro-section" class="intro-section">
+        <!-- Looping Video Background -->
+        <div class="intro-video-container">
+            <video class="intro-video" autoplay muted loop playsinline preload="auto">
+                <!-- CUSTOMIZE: Update path to your intro video -->
+                <source src="videos/burning_slums.mp4" type="video/mp4">
+                <source src="videos/burning_slums.mp4" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Darkening Overlay -->
+            <div class="intro-dark-overlay"></div>
+        </div>
+        
+        <!-- News Flash Images Container -->
+        <div class="news-flash-content">
+            <!-- Headline Text (appears after images) -->
+            <div class="news-headline">
+                <h2 class="headline-text">Slums: A Cause for Concern</h2>
+            </div>
+            
+            <!-- Images Row -->
+            <div class="news-flash-container">
+                <!-- Image 1 -->
+                <div class="flash-image-wrapper flash-1">
+                    <img src="images-before-title/IMG_7904.JPG" alt="News Flash 1" class="flash-img">
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="flash-image-wrapper flash-2">
+                    <img src="images-before-title/IMG_7905.JPG" alt="News Flash 2" class="flash-img">
+                </div>
+                
+                <!-- Image 3 -->
+                <div class="flash-image-wrapper flash-3">
+                    <img src="images-before-title/IMG_7906.jpg" alt="News Flash 3" class="flash-img">
+                </div>
+                
+                <!-- Image 4 -->
+                <div class="flash-image-wrapper flash-4">
+                    <img src="images-before-title/IMG_7907.jpg" alt="News Flash 4" class="flash-img">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bouncing Arrow to Next Section -->
+        <div class="intro-scroll-arrow">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+
+
+    <!--===================================================================================================================================================-->
+    <!--===================================================================================================================================================-->
+
+    <!-- ==================== QUESTION SECTION ?? (NEW - AFTER INTRO) ==================== -->
+    <section id="question-section" class="question-section">
+        <!-- Looping Video Background (Same as intro, more darkened) -->
+        <div class="question-video-container">
+            <video class="question-video" autoplay muted loop playsinline preload="auto">
+                <!-- CUSTOMIZE: Use same video as intro section -->
+                <source src="videos/burning_slums.mp4" type="video/mp4">
+                <source src="videos/burning_slums.mp4" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Darker Overlay -->
+            <div class="question-dark-overlay"></div>
+        </div>
+        
+        <!-- Question Text with Typewriter Effect -->
+        <div class="question-text-container">
+            <h1 class="question-text"></h1>
+        </div>
+        
+        <!-- Journey Text (appears above arrow) -->
+        <p class="journey-text">The Journey to the Solution</p>
+        
+        <!-- Bouncing Arrow to Next Section -->
+        <div class="question-scroll-arrow">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+
+    <!--===================================================================================================================================================-->
+    <!--===================================================================================================================================================-->
+
     <!-- ==================== LANDING SECTION ==================== -->
-    <section id="landing" class="landing-section">
+      <section id="landing" class="landing-section">
         <!-- Video Background Container -->
         <div class="video-container">
-            <!-- CUSTOMIZE: Update paths to point to your Videos folder -->
-            <!-- Example: If your video is named "background.mp4" in Videos folder, use: Videos/background.mp4 -->
-            <video class="background-video" autoplay muted loop playsinline preload="auto">
+            <!-- FIRST VIDEO - Plays once and fades out -->
+            <video class="background-video video-first" autoplay muted playsinline preload="auto" poster="Images/your-poster-image.jpg">
+                <!-- CUSTOMIZE: FIRST VIDEO FILE PATH -->
                 <source src="videos/Cover_Page.mp4" type="video/mp4">
                 <source src="videos/Cover_Page.mp4" type="video/webm">
                 <source src="videos/Cover_Page.mp4" type="video/quicktime">
+                <source src="videos/Cover_Page.mp4" type="video/ogg">
                 Your browser does not support the video tag.
             </video>
+            
+            <!-- SECOND VIDEO - Loops continuously after first video fades -->
+            <video class="background-video video-second" muted loop playsinline preload="auto">
+                <!-- CUSTOMIZE: SECOND VIDEO PATH LOOPING -->
+                <source src="videos/Railway_Section.mp4" type="video/mp4">
+                <source src="videos/Railway_Section.mp4" type="video/webm">
+                <source src="videos/Railway_Section.mp4" type="video/quicktime">
+                <source src="videos/Railway_Section.mp4" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Dark overlay for text visibility -->
+            <div class="video-overlay"></div>
         </div>
         
-        <!-- Main Content Container -->
-        <div class="content">
+        <!-- Content Container -->
+        <div class="content-container">
+            <!-- Main Title - Always Visible -->
             <!-- CUSTOMIZE: Change your title text here -->
-            <!-- First two letters will be colored #f36e48 -->
-            <h1 class="title"><span class="title-accent">.re</span>vive</h1>
+            <h1 class="title">PROEJCT   <span class="highlight-re">.re</span>vive</h1>
             
-            <!-- CUSTOMIZE: Change your subtitle text here -->
-            <p class="subtitle">Re-thinking Informality in Informal Settlements</p>
-        </div>
-
-        <!-- Bouncing Arrow (appears after all elements load) -->
-        <div class="scroll-arrow">
-            <div class="arrow-circle">
-                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            <!-- Unlock Hint - Appears after delay -->
+            <div class="unlock-hint">
+                <span class="hint-text">Type "<span class="hint-word">REVIVE</span>" to unlock</span>
+                <div class="typing-indicator">
+                    <span class="typed-letters"></span>
+                    <span class="cursor-blink">|</span>
+                </div>
             </div>
+            
+            <!-- Subtitle - Hidden until unlocked -->
+            <p class="subtitle locked">Re-thinking Informality in Informal Settlements</p>
+        </div>
+        
+        <!-- Bouncing Arrow - Hidden until unlocked -->
+        <div class="scroll-arrow locked">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
     </section>
 
@@ -95,13 +214,14 @@
 
             
             <!-- Bouncing Arrow for Gallery (appears 1 second after all images load) -->
-            <div class="gallery-scroll-arrow">
-                <div class="gallery-arrow-circle">
-                    <svg class="gallery-arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </div>
+        </div>
+    </div>
+        
+        <!-- Gallery Bouncing Arrow - Positioned outside grid-container -->
+        <div class="gallery-scroll-arrow">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
     </section>
 
@@ -210,6 +330,102 @@
         </div>
     </section>
 
+    <!--==============================================================================================================================================-->
+    <!--==============================================================================================================================================-->
+
+    <!--===============Second IMAGE OVERALYS SECTION : ZOOMED-in MAPS=====================-->
+
+    <section id="overlay-images-2" class="overlay-images-section-2">
+        <!-- Container for overlaying images -->
+        <div class="overlay-container-2">
+            <!-- First Image (Bottom Layer) -->
+            <div class="overlay-image-wrapper-2 layer-1-2">
+            <!-- CUSTOMIZE: Update path to your first overlay image -->
+                <img src="site-Images/Zoomed-in_Important_landmarks.png" alt="Overlay Image 1" class="overlay-img-2">
+            </div>
+        
+        <!-- Second Image (Middle Layer) -->
+        <div class="overlay-image-wrapper-2 layer-2-2">
+            <!-- CUSTOMIZE: Update path to your second overlay image -->
+            <img src="site-Images/Zoomed-in_Text_1.png" alt="Overlay Image 2" class="overlay-img-2">
+        </div>
+        
+        <!-- Third Image (Top Layer) -->
+        <div class="overlay-image-wrapper-2 layer-3-2">
+            <!-- CUSTOMIZE: Update path to your third overlay image -->
+            <img src="site-Images/Zoomed-in_Text_2.png" alt="Overlay Image 3" class="overlay-img-2">
+        </div>
+    </div>
+    
+    <!-- Bouncing Arrow -->
+    <div class="overlay-section-arrow-2">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+</section>
+
+
+
+<!--===================================================================================================================================================-->
+<!--===================================================================================================================================================-->
+ <!-- ==================== TESTIMONIALS VERIFICATION SECTION ==================== -->
+    <section id="verification-section" class="verification-section">
+        <!-- Looping Video Background -->
+        <div class="verification-video-container">
+            <video class="verification-video" autoplay muted loop playsinline preload="auto">
+                <!-- CUSTOMIZE: Update path to your verification video -->
+                <source src="videos/intro-background.mp4" type="video/mp4">
+                <source src="videos/intro-background.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Dark Overlay -->
+            <div class="verification-dark-overlay"></div>
+        </div>
+        
+        <!-- Content Container -->
+        <div class="verification-content">
+            <!-- Main Text with Typewriter -->
+            <div class="verification-main-text-container">
+                <h1 class="verification-main-text"></h1>
+            </div>
+            
+            <!-- Verification Required Text -->
+            <p class="verification-required-text">Verification Required!!</p>
+            
+            <!-- Blinking Verification Dot -->
+            <div class="verification-dot-container">
+                <div class="verification-dot"></div>
+                <div class="dot-ring"></div>
+                <div class="dot-ring-2"></div>
+            </div>
+            
+            <!-- Access Granted Container (Hidden initially) -->
+            <div class="access-granted-container">
+                <div class="scan-line"></div>
+                <div class="verification-grid"></div>
+                <h2 class="access-granted-text">ACCESS GRANTED</h2>
+                <div class="checkmark-container">
+                    <svg class="checkmark" viewBox="0 0 52 52">
+                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bouncing Arrow to Next Section -->
+        <div class="verification-scroll-arrow">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!--===================================================================================================================================================-->
+    <!--===================================================================================================================================================-->
+
 
 
 
@@ -217,6 +433,12 @@
     <div id="lightbox" class="lightbox">
         <button class="lightbox-close">&times;</button>
         <img class="lightbox-image" src="" alt="Enlarged photo">
+    </div>
+
+
+    <!-- Access Denied Overlay -->
+    <div class="access-denied-overlay">
+        <h1 class="denied-message">ACCESS DENIED<br>SLUM DEMOLISHED!!!!</h1>
     </div>
 
 
