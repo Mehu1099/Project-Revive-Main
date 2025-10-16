@@ -1188,5 +1188,120 @@ if (verificationSection && verificationMainText) {
         });
     }
 }
+
+
+// ===================================================================================================================================================================
+// 🖼️ TWO IMAGES SLIDE-IN STACKED SECTION
+// ===================================================================================================================================================================
+
+const slideImagesSection = document.getElementById('slide-images-section');
+const slideTitleText = document.querySelector('.slide-title-text');
+const slideImg1 = document.querySelector('.slide-img-1');
+const slideImg2 = document.querySelector('.slide-img-2');
+const slideArrow = document.querySelector('.slide-scroll-arrow');
+
+if (slideImagesSection && slideTitleText && slideImg1 && slideImg2) {
+    console.log('✅ Slide images section initialized');
+    
+    const titleFullText = "What the People Say?";
+    let titleCharIndex = 0;
+    let hasAnimated = false;
+    
+    // Realistic typewriter for title
+    function typeTitleWriter() {
+        if (titleCharIndex < titleFullText.length) {
+            const currentChar = titleFullText.charAt(titleCharIndex);
+            slideTitleText.textContent += currentChar;
+            titleCharIndex++;
+            
+            // Variable typing speed
+            let delay;
+            
+            if (currentChar === ' ') {
+                delay = Math.random() * 100 + 50; // 50-150ms
+            } else if (currentChar === '?' || currentChar === ',') {
+                delay = Math.random() * 150 + 200; // 200-350ms
+            } else if (Math.random() > 0.85) {
+                delay = Math.random() * 100 + 150; // 150-250ms
+            } else {
+                delay = Math.random() * 60 + 40; // 40-100ms
+            }
+            
+            setTimeout(typeTitleWriter, delay);
+        } else {
+            // Typing complete - remove cursor
+            setTimeout(function() {
+                slideTitleText.classList.remove('typing');
+                console.log('✍️ Title typewriter complete');
+                
+                // Start image animations after title completes
+                startImageAnimations();
+            }, 500);
+        }
+    }
+    
+    // Start image animations
+    function startImageAnimations() {
+        // First image slides in
+        setTimeout(function() {
+            slideImg1.classList.add('animate');
+            console.log('📸 First image sliding in');
+        }, 500);
+        
+        // Second image slides in after first completes
+        setTimeout(function() {
+            slideImg2.classList.add('animate');
+            console.log('📸 Second image sliding in');
+            
+            // After second image settles, start blinking
+            setTimeout(function() {
+                slideImg2.classList.add('blinking');
+                console.log('✨ Second image blinking started');
+            }, 1800);
+        }, 2300);
+        
+        // Show arrow after all animations complete
+        setTimeout(function() {
+            if (slideArrow) {
+                slideArrow.classList.add('show');
+                console.log('⬇️ Slide section arrow shown');
+            }
+        }, 5000);
+    }
+    
+    // Intersection Observer to start animation when section is visible
+    const slideObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+                console.log('👁️ Slide images section visible - starting title typewriter');
+                
+                // Brief pause before typing starts
+                setTimeout(function() {
+                    slideTitleText.classList.add('show', 'typing');
+                    typeTitleWriter();
+                }, 300);
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+    
+    slideObserver.observe(slideImagesSection);
+    
+    // Arrow click navigation to next section
+    if (slideArrow) {
+        slideArrow.addEventListener('click', function() {
+            const nextSection = slideImagesSection.nextElementSibling;
+            if (nextSection) {
+                console.log('Slide arrow clicked - scrolling to next section');
+                nextSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+}
     
 });
