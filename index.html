@@ -3,493 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Revive</title>
+    <title>Project .revive</title>       <!--Replace with project name to show what the browser tab will show-->
     
-    <!-- Google Fonts - Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
     
-    <!-- PF Din Stencil Font -->
-    <link href="https://fonts.cdnfonts.com/css/pf-din-stencil" rel="stylesheet">
-    
-    <!-- Link to CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!--=======================================================================================================================================================-->
-    <!--=======================================================================================================================================================-->
-    <!-- ==================== INTRO SECTION (NEW - BEFORE LANDING) ==================== -->
+    <!-- ===================================================================================================================================
+         LANDING VIDEO BACKGROUND
+         Instructions: Replace video paths in videos/ folder
+         ==================================================================================================================================== -->
 
-    <section id="intro-section" class="intro-section">
-        <!-- Looping Video Background -->
-        <div class="intro-video-container">
-            <video class="intro-video" autoplay muted loop playsinline preload="auto">
-                <!-- CUSTOMIZE: Update path to your intro video -->
-                <source src="videos/burning_slums.mp4" type="video/mp4">
-                <source src="videos/burning_slums.mp4" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-            
-            <!-- Darkening Overlay -->
-            <div class="intro-dark-overlay"></div>
+
+    <div class="video-background">
+        <video id="backgroundVideo" autoplay muted loop playsinline>
+            <source src="videos/Railway_Section.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" id="videoOverlay"></div>
+    </div>
+
+    <!-- ================================
+         MODE INDICATOR (Story Mode / Explore Mode)
+         ================================ -->
+    <div class="mode-indicator" id="modeIndicator">Story Mode</div>
+
+    <!-- ================================
+         EXIT EXPLORE BUTTON
+         ================================ -->
+    <div class="exit-explore" id="exitExplore">← Return to Story</div>
+
+    <!-- ================================
+         PATH TOGGLE BUTTON
+         ================================ -->
+    <div class="path-toggle" id="pathToggle">
+        📍 Show Suggested Path
+    </div>
+
+    <!-- ================================
+         VIDEO WATCH MODE TOGGLE
+         ================================ -->
+    <div class="video-toggle" id="videoToggle">
+        🎥 Watch Video
+    </div>
+
+    <!-- ================================
+         NAVIGATION HINT
+         ================================ -->
+    <div class="navigation-hint" id="navHint">
+        Toggle suggested path or explore freely • Click any image to focus
+    </div>
+
+    <!-- ================================
+         FLOATING MENU TRIGGER BUTTON
+         ================================ -->
+    <div class="menu-trigger" id="menuTrigger">
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        
-        <!-- News Flash Images Container -->
-        <div class="news-flash-content">
-            <!-- Headline Text (appears after images) -->
-            <div class="news-headline">
-                <h2 class="headline-text">Slums: A Cause for Concern</h2>
-            </div>
-            
-            <!-- Images Row -->
-            <div class="news-flash-container">
-                <!-- Image 1 -->
-                <div class="flash-image-wrapper flash-1">
-                    <img src="images-before-title/IMG_7904.JPG" alt="News Flash 1" class="flash-img">
-                </div>
-                
-                <!-- Image 2 -->
-                <div class="flash-image-wrapper flash-2">
-                    <img src="images-before-title/IMG_7905.JPG" alt="News Flash 2" class="flash-img">
-                </div>
-                
-                <!-- Image 3 -->
-                <div class="flash-image-wrapper flash-3">
-                    <img src="images-before-title/IMG_7906.jpg" alt="News Flash 3" class="flash-img">
-                </div>
-                
-                <!-- Image 4 -->
-                <div class="flash-image-wrapper flash-4">
-                    <img src="images-before-title/IMG_7907.jpg" alt="News Flash 4" class="flash-img">
-                </div>
-            </div>
-        </div>
-        
-        <!-- Bouncing Arrow to Next Section -->
-        <div class="intro-scroll-arrow">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-    </section>
+        <div class="menu-label">Explore</div>
+    </div>
 
+    <!-- ================================
+         NAVIGATION MENU
+         Instructions: Category names should match your content
+         ================================ -->
+    <div class="menu" id="menu">
+        <div class="menu-title">Categories</div>
+        <div class="menu-item" data-category="existing-life">Existing Life & Issues</div>
+        <div class="menu-item" data-category="understanding-site">Understanding the Site</div>
+        <div class="menu-item" data-category="reality-check">Reality Check & Testimonials</div>
+        <div class="menu-item" data-category="masterplan">The Masterplan</div>
+        <div class="menu-item" data-category="housing">Housing Infrastructure Upgrades</div>
+    </div>
 
-
-    <!--===================================================================================================================================================-->
-    <!--===================================================================================================================================================-->
-
-    <!-- ==================== QUESTION SECTION ?? (NEW - AFTER INTRO) ==================== -->
-    <section id="question-section" class="question-section">
-        <!-- Looping Video Background (Same as intro, more darkened) -->
-        <div class="question-video-container">
-            <video class="question-video" autoplay muted loop playsinline preload="auto">
-                <!-- CUSTOMIZE: Use same video as intro section -->
-                <source src="videos/burning_slums.mp4" type="video/mp4">
-                <source src="videos/burning_slums.mp4" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-            
-            <!-- Darker Overlay -->
-            <div class="question-dark-overlay"></div>
-        </div>
-        
-        <!-- Question Text with Typewriter Effect -->
-        <div class="question-text-container">
-            <h1 class="question-text"></h1>
-        </div>
-        
-        <!-- Journey Text (appears above arrow) -->
-        <p class="journey-text">The Journey to the Solution</p>
-        
-        <!-- Bouncing Arrow to Next Section -->
-        <div class="question-scroll-arrow">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-    </section>
-
-
-    <!--===================================================================================================================================================-->
-    <!--===================================================================================================================================================-->
-
-    <!-- ==================== LANDING SECTION ==================== -->
-      <section id="landing" class="landing-section">
-        <!-- Video Background Container -->
-        <div class="video-container">
-            <!-- FIRST VIDEO - Plays once and fades out -->
-            <video class="background-video video-first" autoplay muted playsinline preload="auto" poster="Images/your-poster-image.jpg">
-                <!-- CUSTOMIZE: FIRST VIDEO FILE PATH -->
-                <source src="videos/Cover_Page.mp4" type="video/mp4">
-                <source src="videos/Cover_Page.mp4" type="video/webm">
-                <source src="videos/Cover_Page.mp4" type="video/quicktime">
-                <source src="videos/Cover_Page.mp4" type="video/ogg">
-                Your browser does not support the video tag.
-            </video>
-            
-            <!-- SECOND VIDEO - Loops continuously after first video fades -->
-            <video class="background-video video-second" muted loop playsinline preload="auto">
-                <!-- CUSTOMIZE: SECOND VIDEO PATH LOOPING -->
-                <source src="videos/Railway_Section.mp4" type="video/mp4">
-                <source src="videos/Railway_Section.mp4" type="video/webm">
-                <source src="videos/Railway_Section.mp4" type="video/quicktime">
-                <source src="videos/Railway_Section.mp4" type="video/ogg">
-                Your browser does not support the video tag.
-            </video>
-            
-            <!-- Dark overlay for text visibility -->
-            <div class="video-overlay"></div>
-        </div>
-        
-        <!-- Content Container -->
-        <div class="content-container">
-            <!-- Main Title - Always Visible -->
-            <!-- CUSTOMIZE: Change your title text here -->
-            <h1 class="title">PROEJCT   <span class="highlight-re">.re</span>vive</h1>
-            
-            <!-- Unlock Hint - Appears after delay -->
-            <div class="unlock-hint">
-                <span class="hint-text">Type "<span class="hint-word">REVIVE</span>" to unlock</span>
-                <div class="typing-indicator">
-                    <span class="typed-letters"></span>
-                    <span class="cursor-blink">|</span>
-                </div>
-            </div>
-            
-            <!-- Subtitle - Hidden until unlocked -->
-            <p class="subtitle locked">Re-thinking Informality in Informal Settlements</p>
-        </div>
-        
-        <!-- Bouncing Arrow - Hidden until unlocked -->
-        <div class="scroll-arrow locked">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-    </section>
-
-
-    <!-- ==================== PHOTO GALLERY SECTION ==================== -->
-    <section id="gallery" class="gallery-section">
-        <div class="grid-container">
-            <!-- Minimalist page title -->
-            <h1 class="page-title">Sangam Vihar at a Glance</h1>
-            
-            <!-- Photo Grid - 2 rows x 5 columns -->
-            <div class="photo-grid">
-                <!-- Row 1 -->
-                <div class="photo-item" data-index="0">
-                    <img src="images/photos-for-introduction/IMG_9273.jpg" alt="Photo 1" loading="lazy">
-                </div>
-                <div class="photo-item" data-index="1">
-                    <img src="images/photos-for-introduction/IMG_9297.jpg" alt="Photo 2" loading="lazy">
-                </div>
-                <div class="photo-item" data-index="2">
-                    <img src="images/photos-for-introduction/IMG_9303.jpg" alt="Photo 3" loading="lazy">
-                </div>
-                <div class="photo-item" data-index="3">
-                    <img src="images/photos-for-introduction/IMG_9305.jpg" alt="Photo 4" loading="lazy">
-                </div>
-                <div class="photo-item" data-index="4">
-                    <img src="images/photos-for-introduction/IMG_9316.jpg" alt="Photo 5" loading="lazy">
-                </div>
-                
-                <!-- Row 2 -->
-                <div class="photo-item" data-index="5">
-                    <img src="images/photos-for-introduction/IMG_9340.jpg" alt="Photo 6" loading="lazy">
-                </div>
-                <div class="photo-item" data-index="6">
-                    <img src="images/photos-for-introduction/IMG_9346.jpg" alt="Photo 7" loading="lazy">
-                </div>
-                <div class="photo-item" data-index="7">
-                    <img src="images/photos-for-introduction/IMG_9359.jpg" alt="Photo 8" loading="lazy">
-                </div>
-                <div class="photo-item" data-index="8">
-                    <img src="images/photos-for-introduction/IMG_9372.jpg" alt="Photo 9" loading="lazy">
-                </div>
-                <div class="photo-item" data-index="9">
-                    <img src="images/photos-for-introduction/IMG_9380.jpg" alt="Photo 10" loading="lazy">
-                </div>
-            </div>
-
-            
-            <!-- Bouncing Arrow for Gallery (appears 1 second after all images load) -->
+    <!-- ================================
+         MODE CHOICE MODAL
+         ================================ -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="mode-choice-modal" id="modeChoiceModal">
+        <h3>How would you like to view this section?</h3>
+        <div class="mode-choice-buttons">
+            <button class="mode-choice-btn story" id="viewStoryBtn">View in Story Mode</button>
+            <button class="mode-choice-btn explore" id="viewExploreBtn">Explore Content</button>
         </div>
     </div>
+
+    <!-- ================================
+         STORY MODE (Scrolling Narrative)
+         Instructions: Replace text content in each section below
+         ================================ -->
+    <div class="story-mode" id="storyMode">
         
-        <!-- Gallery Bouncing Arrow - Positioned outside grid-container -->
-        <div class="gallery-scroll-arrow">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-    </section>
-
-
-
-
-    <!--=========================================================================================================================================-->
-    <!--=========================================================================================================================================-->
-    <!--=========================================================================================================================================-->
-    <!--=========================================================================================================================================-->
-
-    <!-- ==================== TWO IMAGES SECTION ==================== -->
-
-    <section id="two-images" class="two-images-section">
-        <!-- Container for two images -->
-        <div class="two-images-container">
-            <!-- First Image -->
-            <div class="image-box image-left">
-                <!-- CUSTOMIZE: Update path to your first image -->
-                <img src="images-for-current-conditions/Current-Condition.png" alt="Comparison Image 1" class="comparison-img">
+        <!-- ========== LANDING SECTION ========== 
+             Instructions: Edit project title and subtitle here
+        -->
+        <section class="story-section landing-section" data-video="landing">
+            <div class="landing-content">
+                <h1><span class="project-name">Project</span> <span class="revive-text">.revive</span></h1>
+                <p>Re-thinking Informality in Informal Settlements</p>
+                <div class="scroll-indicator">Scroll to Explore ↓</div>
             </div>
-            
-            <!-- Second Image -->
-            <div class="image-box image-right">
-                <!-- CUSTOMIZE: Update path to your second image -->
-                <img src="images-for-current-conditions/Most-Common Prposal-Massing.png" alt="Comparison Image 2" class="comparison-img">
+        </section>
+
+        <!-- ========== SECTION 1: Existing Life & Issues ========== 
+             Instructions: Replace paragraph text with your content
+        -->
+        <section class="story-section" data-video="video1" data-category="existing-life">
+            <div class="story-content">
+                <h2>Existing Life & The Challenge</h2>
+                <p>
+                    <!-- REPLACE THIS TEXT -->
+                    Sangam Vihar, located in South Delhi, is one of the largest unauthorized colonies in Asia. Home to over half a million residents, the settlement faces significant infrastructure challenges including inadequate water supply, lack of proper sanitation, narrow congested lanes, and insufficient access to basic services.
+                </p>
+                <p>
+                    <!-- REPLACE THIS TEXT -->
+                    Despite these challenges, Sangam Vihar is a vibrant community with strong social bonds, local economies, and cultural richness. Our approach recognizes this existing vitality while addressing the urgent need for improved living conditions.
+                </p>
+                <button class="explore-section-btn" onclick="exploreSectionFromStory('existing-life')">
+                    🔍 Explore Photos & Diagrams
+                </button>
             </div>
-        </div>
-        
-        <!-- Bouncing Arrow -->
-        <div class="two-images-scroll-arrow">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-        
-        <!-- Reality Check Text -->
-        <p class="reality-check-text">Reality Check</p>
-    </section>
+        </section>
+
+        <!-- ========== SECTION 2: Understanding the Site ========== -->
+        <section class="story-section" data-video="video2" data-category="understanding-site">
+            <div class="story-content">
+                <h2>Understanding the Site</h2>
+                <p>
+                    <!-- REPLACE THIS TEXT -->
+                    Located in South Delhi, Sangam Vihar spans across multiple zones with varying densities and infrastructure conditions. Our comprehensive site analysis examines the existing urban fabric at multiple scales—from the regional context to the intimate neighborhood level.
+                </p>
+                <p>
+                    <!-- REPLACE THIS TEXT -->
+                    Through detailed mapping and on-ground surveys, we've identified key patterns of movement, commercial activity, and community spaces that must be preserved and enhanced in any rehabilitation effort.
+                </p>
+                <button class="explore-section-btn" onclick="exploreSectionFromStory('understanding-site')">
+                    🗺️ Explore Site Analysis
+                </button>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 3: Reality Check & Testimonials ========== -->
+        <section class="story-section" data-video="video3" data-category="reality-check">
+            <div class="story-content">
+                <h2>Reality Check & Community Voice</h2>
+                <p>
+                    <!-- REPLACE THIS TEXT -->
+                    The traditional approach to slum rehabilitation—demolition and construction of high-rise apartments—often fails to address the actual needs of residents. Our extensive community consultations reveal what people truly need: improved infrastructure, secure tenure, and development that preserves their livelihoods and social networks.
+                </p>
+                <p>
+                    <!-- REPLACE THIS TEXT -->
+                    Testimonials from residents highlight priorities including better water and sanitation, wider lanes for emergency access, community spaces, schools, and health facilities—not relocation to distant high-rises that disrupt their lives.
+                </p>
+                <button class="explore-section-btn" onclick="exploreSectionFromStory('reality-check')">
+                    💬 Explore Community Input
+                </button>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 4: The Masterplan ========== -->
+        <section class="story-section" data-video="video2" data-category="masterplan">
+            <div class="story-content">
+                <h2>The Masterplan</h2>
+                <p>
+                    <!-- REPLACE THIS TEXT -->
+                    Our masterplan proposes an in-situ upgrading approach that works with the existing urban fabric rather than against it. The plan introduces a network of public spaces, improved infrastructure corridors, and strategic interventions that enhance livability while respecting existing community structures.
+                </p>
+                <p>
+                    <!-- REPLACE THIS TEXT -->
+                    Developed through both 2D planning and 3D spatial analysis, the masterplan balances density with quality of life, ensuring every resident has access to light, air, and community amenities.
+                </p>
+                <button class="explore-section-btn" onclick="exploreSectionFromStory('masterplan')">
+                    📐 Explore Masterplan Drawings
+                </button>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 5: Housing Typologies ========== -->
+        <section class="story-section" data-video="video3" data-category="housing">
+            <div class="story-content">
+                <h2>Housing Typologies</h2>
+                <p>
+                    <!-- REPLACE THIS TEXT -->
+                    We've developed three distinct housing typologies that respond to different household needs and site conditions. Each typology incorporates improved infrastructure, natural light and ventilation, and flexible spaces that accommodate diverse livelihoods.
+                </p>
+                <p>
+                    <!-- REPLACE THIS TEXT -->
+                    These typologies demonstrate how existing structures can be incrementally upgraded and expanded, allowing residents to remain in their homes during construction while progressively improving their living conditions.
+                </p>
+                <button class="explore-section-btn" onclick="exploreSectionFromStory('housing')">
+                    🏘️ Explore Housing Typologies
+                </button>
+            </div>
+        </section>
+
+    </div>
 
 
-    <!--=========================================================================================================================================-->
-    <!--=========================================================================================================================================-->
-    <!--=========================================================================================================================================-->
 
-    <!-- ==================== SECOND VIDEO TRANSITION SECTION ==================== -->
+    <!-- ===============================================================================================================================
+         EXPLORE MODE (Spatial Navigation)
+         =============================================================================================================================== -->
+    <div class="explore-mode" id="exploreMode">
+        <svg class="path-network" id="pathNetwork"></svg>
+        <div class="spatial-canvas" id="spatialCanvas"></div>
+    </div>
 
-    <section id="video-section" class="video-section">
-        <!-- Video Background Container -->
-        <div class="video-section-container">
-            <video class="section-video" muted playsinline preload="auto">
-                <!-- CUSTOMIZE: Update paths to point to your Videos folder -->
-                <source src="videos/Second_Transition.mp4" type="video/mp4">
-                <source src="videos/Second_Transition.mp4" type="video/webm">
-                <source src="videos/Second_Transition.mp4" type="video/quicktime">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        
-        <!-- Bouncing Arrow -->
-        <div class="video-section-arrow">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-        
-        <!-- Understanding the Site Text -->
-        <p class="video-section-text">Understanding the Site</p>
-    </section>
     
 
-
-    <!--=========================================================================================================================================-->
-    <!--=========================================================================================================================================-->
-    <!--=========================================================================================================================================-->
-
-    <!-- ==================== Zoomed Out Site Maps Overlays ==================== -->
-    
-    <section id="overlay-images" class="overlay-images-section">
-        <!-- Container for overlaying images -->
-        <div class="overlay-container">
-            <!-- First Image (Bottom Layer) -->
-            <div class="overlay-image-wrapper layer-1">
-                <!-- CUSTOMIZE: Update path to your first overlay image -->
-                <img src="site-Images/ZoomedOutMap.png" alt="Overlay Image 1" class="overlay-img">
+    <!-- ===============================================================================================================================
+         TIMELINE (Appears in Explore Mode)
+         Instructions: Timeline labels should match menu categories
+         =============================================================================================================================== -->
+    <div class="timeline" id="timeline">
+        <div class="timeline-content">
+            <div class="timeline-segment" data-section="0">
+                <div class="timeline-label">Introduction</div>
+                <div class="timeline-thumb"></div>
             </div>
-            
-            <!-- Second Image (Middle Layer) -->
-            <div class="overlay-image-wrapper layer-2">
-                <!-- CUSTOMIZE: Update path to your second overlay image -->
-                <img src="site-Images/ZoomedOutText_1.png" alt="Overlay Image 2" class="overlay-img">
+            <div class="timeline-segment" data-section="1">
+                <div class="timeline-label">Existing Life & Issues</div>
+                <div class="timeline-thumb"></div>
             </div>
-            
-            <!-- Third Image (Top Layer) -->
-            <div class="overlay-image-wrapper layer-3">
-                <!-- CUSTOMIZE: Update path to your third overlay image -->
-                <img src="site-Images/ZoomedOutText_2.png" alt="Overlay Image 3" class="overlay-img">
+            <div class="timeline-segment" data-section="2">
+                <div class="timeline-label">Understanding the Site</div>
+                <div class="timeline-thumb"></div>
             </div>
-        </div>
-        
-        <!-- Bouncing Arrow -->
-        <div class="overlay-section-arrow">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-    </section>
-
-    <!--==============================================================================================================================================-->
-    <!--==============================================================================================================================================-->
-
-    <!--===============Second IMAGE OVERALYS SECTION : ZOOMED-in MAPS=====================-->
-
-    <section id="overlay-images-2" class="overlay-images-section-2">
-        <!-- Container for overlaying images -->
-        <div class="overlay-container-2">
-            <!-- First Image (Bottom Layer) -->
-            <div class="overlay-image-wrapper-2 layer-1-2">
-            <!-- CUSTOMIZE: Update path to your first overlay image -->
-                <img src="site-Images/Zoomed-in_Important_landmarks.png" alt="Overlay Image 1" class="overlay-img-2">
+            <div class="timeline-segment" data-section="3">
+                <div class="timeline-label">Reality Check & Testimonials</div>
+                <div class="timeline-thumb"></div>
             </div>
-        
-        <!-- Second Image (Middle Layer) -->
-        <div class="overlay-image-wrapper-2 layer-2-2">
-            <!-- CUSTOMIZE: Update path to your second overlay image -->
-            <img src="site-Images/Zoomed-in_Text_1.png" alt="Overlay Image 2" class="overlay-img-2">
-        </div>
-        
-        <!-- Third Image (Top Layer) -->
-        <div class="overlay-image-wrapper-2 layer-3-2">
-            <!-- CUSTOMIZE: Update path to your third overlay image -->
-            <img src="site-Images/Zoomed-in_Text_2.png" alt="Overlay Image 3" class="overlay-img-2">
+            <div class="timeline-segment" data-section="4">
+                <div class="timeline-label">The Masterplan</div>
+                <div class="timeline-thumb"></div>
+            </div>
+            <div class="timeline-segment" data-section="5">
+                <div class="timeline-label">Housing Infrastructure Upgrades</div>
+                <div class="timeline-thumb"></div>
+            </div>
         </div>
     </div>
-    
-    <!-- Bouncing Arrow -->
-    <div class="overlay-section-arrow-2">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </div>
-</section>
 
-
-
-<!--===================================================================================================================================================-->
-<!--===================================================================================================================================================-->
- <!-- ==================== TESTIMONIALS VERIFICATION SECTION ==================== -->
-    <section id="verification-section" class="verification-section">
-        <!-- Looping Video Background -->
-        <div class="verification-video-container">
-            <video class="verification-video" autoplay muted loop playsinline preload="auto">
-                <!-- CUSTOMIZE: Update path to your verification video -->
-                <source src="videos/Fourth Transition.mp4" type="video/mp4">
-                <source src="videos/Fourth Transition.mp4" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-            
-            <!-- Dark Overlay -->
-            <div class="verification-dark-overlay"></div>
-        </div>
-        
-        <!-- Content Container -->
-        <div class="verification-content">
-            <!-- Main Text with Typewriter -->
-            <div class="verification-main-text-container">
-                <h1 class="verification-main-text"></h1>
-            </div>
-            
-            <!-- Verification Required Text -->
-            <p class="verification-required-text">Verification Required!!</p>
-            
-            <!-- Blinking Verification Dot -->
-            <div class="verification-dot-container">
-                <div class="verification-dot"></div>
-                <div class="dot-ring"></div>
-                <div class="dot-ring-2"></div>
-            </div>
-            
-            <!-- Access Granted Container (Hidden initially) -->
-            <div class="access-granted-container">
-                <div class="scan-line"></div>
-                <div class="verification-grid"></div>
-                <h2 class="access-granted-text">ACCESS GRANTED</h2>
-                <div class="checkmark-container">
-                    <svg class="checkmark" viewBox="0 0 52 52">
-                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
-                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Bouncing Arrow to Next Section -->
-        <div class="verification-scroll-arrow">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-    </section>
-
-    <!--===================================================================================================================================================-->
-    <!--===================================================================================================================================================-->
-
-
-   <!-- ==================== TWO IMAGES SLIDE-IN STACKED SECTION ==================== -->
-    <section id="slide-images-section" class="slide-images-section">
-        <!-- Looping Video Background -->
-        <div class="slide-video-container">
-            <video class="slide-video" autoplay muted loop playsinline preload="auto">
-                <!-- CUSTOMIZE: Update path to your video (same as verification section) -->
-                <source src="videos/Fourth Transition.mp4" type="video/mp4">
-                <source src="videos/Fourth Transition.mp4" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-            
-            <!-- Dark Overlay -->
-            <div class="slide-dark-overlay"></div>
-        </div>
-        
-        <!-- Title with Typewriter Effect -->
-        <div class="slide-title-container">
-            <h1 class="slide-title-text"></h1>
-        </div>
-        
-        <!-- Images Container (Stacked) -->
-        <div class="slide-images-container">
-            <!-- First Image (Bottom Layer) -->
-            <div class="slide-image-wrapper slide-img-1">
-                <img src="site-axons/people_base_site.png" alt="Slide Image 1" class="slide-img">
-            </div>
-            
-            <!-- Second Image (Top Layer - with blinking) -->
-            <div class="slide-image-wrapper slide-img-2">
-                <img src="site-axons/people_text.png" alt="Slide Image 2" class="slide-img">
-            </div>
-        </div>
-        
-        <!-- Bouncing Arrow to Next Section -->
-        <div class="slide-scroll-arrow">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#f36e48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-    </section>
-
-    <!--===================================================================================================================================================-->
-    <!--===================================================================================================================================================-->
-
-
-
-
-    <!-- ==================== LIGHTBOX FOR IMAGE VIEWING ==================== -->
-    <div id="lightbox" class="lightbox">
-        <button class="lightbox-close">&times;</button>
-        <img class="lightbox-image" src="" alt="Enlarged photo">
-    </div>
-
-
-    <!-- Access Denied Overlay -->
-    <div class="access-denied-overlay">
-        <h1 class="denied-message">ACCESS DENIED<br>SLUM DEMOLISHED!!!!</h1>
-    </div>
-
-
-    <!-- Link to JavaScript file -->
-    <script src="script.js"></script>
-
+    <!-- Main JavaScript File -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>
