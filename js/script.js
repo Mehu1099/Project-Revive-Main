@@ -74,7 +74,7 @@ const videoSources = {
     'landing':'videos/Railway_Section.mp4',             // 5 second intro video
     'video1': 'videos/First_Transition.mp4',           // 34 seconds - Site tour
     'video2': 'videos/Fourth_Transition.mp4',         // 9 seconds - Site tour
-    'video3': 'videos/Second_transition.mp4'         // 45 seconds - Site tour
+    'video3': 'videos/Second_transition_smaller.mp4' // 45 seconds - Site tour
 };
 
 /* ================================
