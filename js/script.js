@@ -11,70 +11,70 @@
 const contentDatabase = {
     'existing-life': [
         // First 10 photos - Main path
-        { src: 'images/existing/IMG_9273.jpg"', label: 'Housing' },
-        { src: 'images/existing/photo-2.jpg', label: 'Street View 2' },
-        { src: 'images/existing/photo-3.jpg', label: 'Community Space' },
-        { src: 'images/existing/photo-4.jpg', label: 'Housing Conditions' },
-        { src: 'images/existing/photo-5.jpg', label: 'Daily Life' },
-        { src: 'images/existing/photo-6.jpg', label: 'Infrastructure' },
-        { src: 'images/existing/photo-7.jpg', label: 'Commercial Area' },
-        { src: 'images/existing/photo-8.jpg', label: 'Narrow Lanes' },
-        { src: 'images/existing/photo-9.jpg', label: 'Water Access' },
-        { src: 'images/existing/photo-10.jpg', label: 'Living Conditions' },
+        { src: 'images/existing/IMG_9273.jpg', label: 'Housing' },
+        { src: 'images/existing/IMG_9303.jpg', label: 'Street View' },
+        { src: 'images/existing/IMG_9316.jpg', label: 'Street View' },
+        { src: 'images/existing/IMG_9346.jpg', label: 'Street View' },
+        { src: 'images/existing/IMG_9372.jpg', label: 'Building Exterior' },
+        { src: 'images/existing/IMG_9380.jpg', label: 'Retail Shop' },
+        { src: 'images/existing/IMG_9297.jpg', label: 'People-Construction' },
+        { src: 'images/existing/IMG_9305.jpg', label: 'People-Houshold' },
+        { src: 'images/existing/IMG_9340.jpg', label: 'People-Retail' },
+        { src: 'images/existing/IMG_9359.jpg"', label: 'Young Life' },
         // Last 2 diagrams - Secondary path (blue)
-        { src: 'images/existing/diagram-1.jpg', label: 'Current Condition Diagram' },
-        { src: 'images/existing/diagram-2.jpg', label: 'Developer Solution Diagram' }
+        { src: 'images/existing/Current_Condition.png"', label: 'Existing Condition' },
+        { src: 'images/existing/Most_Common_Proposal_Massing.png', label: 'Developer Solution Diagram' }
     ],
     'understanding-site': [
-        { src: 'images/site/location-1.jpg', label: 'Regional Context' },
-        { src: 'images/site/location-2.jpg', label: 'Local Context' }
+        { src: 'images/site/Zoomed_Out_Map.png', label: 'Zoomed-out Context' },
+        { src: 'images/site/Zoomed-in_Important_landmarks.png', label: 'Zoomed-in Context' }
     ],
     'reality-check': [
-        { src: 'images/reality/drawing-1.jpg', label: 'Current Status Analysis' },
-        { src: 'images/reality/drawing-2.jpg', label: 'Resident Needs Assessment' },
-        { src: 'images/reality/drawing-3.jpg', label: 'Future Requirements' }
+        { src: 'images/reality/existing_plan.png', label: 'Existing Plan' },
+        { src: 'images/reality/existing_axon.png', label: 'Site Cluster Axonomteric' },
+        { src: 'images/reality/testimonials_residents.png', label: 'Resident Testimonials' }
     ],
     'masterplan': [
-        { src: 'images/masterplan/plan-2d.jpg', label: '2D Masterplan' },
-        { src: 'images/masterplan/plan-3d.jpg', label: '3D Axonometric View' }
+        { src: 'images/masterplan/masterplan-2D.png"', label: 'Masterplan' },
+        { src: 'images/masterplan/masterplan-axon.png"', label: 'Masterplan Axonometric' }
     ],
     'housing': [
         // Typology 1 - Red numbers (0-6)
-        { src: 'images/housing/type1-1.jpg', label: 'Typology 1 - Overview', typology: 1 },
-        { src: 'images/housing/type1-2.jpg', label: 'Typology 1 - Ground Floor', typology: 1 },
-        { src: 'images/housing/type1-3.jpg', label: 'Typology 1 - First Floor', typology: 1 },
-        { src: 'images/housing/type1-4.jpg', label: 'Typology 1 - Section', typology: 1 },
-        { src: 'images/housing/type1-5.jpg', label: 'Typology 1 - Elevation', typology: 1 },
-        { src: 'images/housing/type1-6.jpg', label: 'Typology 1 - Details', typology: 1 },
-        { src: 'images/housing/type1-7.jpg', label: 'Typology 1 - 3D View', typology: 1 },
+        { src: 'images/housing/typology1-in-context.png', label: 'Typology 1 - In Context', typology: 1 },
+        { src: 'images/housing/typology-1-PublicSphere.png', label: 'Typology 1 - Public Sphere', typology: 1 },
+        { src: 'images/housing/typology-1-PrivateSphere.png', label: 'Typology 1 - Private Sphere', typology: 1 },
+        { src: 'images/housing/typology-1-arcade.png"', label: 'Typology 1 - Arcade Level', typology: 1 },
+        { src: 'images/housing/typology-1-sharedcorridor.png"', label: 'Typology 1 - Shared Corridor', typology: 1 },
+        { src: 'images/housing/typology-1-community-rooftop.png', label: 'Typology 1 - Community Rooftop', typology: 1 },
+        { src: 'images/housing/typology-1-real-life-context.png', label: 'Typology 1 - Real Life', typology: 1 },
         // Typology 2 - Blue numbers (7-13)
-        { src: 'images/housing/type2-1.jpg', label: 'Typology 2 - Overview', typology: 2 },
-        { src: 'images/housing/type2-2.jpg', label: 'Typology 2 - Ground Floor', typology: 2 },
-        { src: 'images/housing/type2-3.jpg', label: 'Typology 2 - First Floor', typology: 2 },
-        { src: 'images/housing/type2-4.jpg', label: 'Typology 2 - Section', typology: 2 },
-        { src: 'images/housing/type2-5.jpg', label: 'Typology 2 - Elevation', typology: 2 },
-        { src: 'images/housing/type2-6.jpg', label: 'Typology 2 - Details', typology: 2 },
-        { src: 'images/housing/type2-7.jpg', label: 'Typology 2 - 3D View', typology: 2 },
+        { src: 'images/housing/typology2-in-context.png', label: 'Typology 2 - In Context', typology: 2 },
+        { src: 'images/housing/typology-2-PublicSphere.png', label: 'Typology 2 - Public Sphere', typology: 2 },
+        { src: 'images/housing/typology-2-PrivateSphere.png', label: 'Typology 2 - Private Sphere', typology: 2 },
+        { src: 'images/housing/typology-2-arcade.png', label: 'Typology 2 - Arcade Level', typology: 2 },
+        { src: 'images/housing/typology-2-sharedcorridor.png', label: 'Typology 2 - Shared Corridor', typology: 2 },
+        { src: 'images/housing/typology-2-community-rooftop.png', label: 'Typology 2 - Community Rooftop', typology: 2 },
+        { src: 'images/housing/typology-2-real-life-context.png', label: 'Typology 2 - Real Life', typology: 2 },
         // Typology 3 - Green numbers (14-20)
-        { src: 'images/housing/type3-1.jpg', label: 'Typology 3 - Overview', typology: 3 },
-        { src: 'images/housing/type3-2.jpg', label: 'Typology 3 - Ground Floor', typology: 3 },
-        { src: 'images/housing/type3-3.jpg', label: 'Typology 3 - First Floor', typology: 3 },
-        { src: 'images/housing/type3-4.jpg', label: 'Typology 3 - Section', typology: 3 },
-        { src: 'images/housing/type3-5.jpg', label: 'Typology 3 - Elevation', typology: 3 },
-        { src: 'images/housing/type3-6.jpg', label: 'Typology 3 - Details', typology: 3 },
-        { src: 'images/housing/type3-7.jpg', label: 'Typology 3 - 3D View', typology: 3 }
+        { src: 'images/housing/typology3-in-context.png', label: 'Typology 3 - In Context', typology: 3 },
+        { src: 'images/housing/typology-3-PublicSphere.png', label: 'Typology 3 - Public Sphere', typology: 3 },
+        { src: 'images/housing/typology-3-PrivateSphere.png', label: 'Typology 3 - Private Sphere', typology: 3 },
+        { src: 'images/housing/typology-3-courtyard.png', label: 'Typology 3 - Courtyard Level', typology: 3 },
+        { src: 'images/housing/typology-3-sharedcorridor.png', label: 'Typology 3 - Shared Corridor', typology: 3 },
+        { src: 'images/housing/typology-3-community-rooftop.png', label: 'Typology 3 - Community Rooftop', typology: 3 },
+        { src: 'images/housing/typology-3-real-life-context.png', label: 'Typology 3 - Real Life', typology: 3 }
     ]
 };
 
-/* ================================
+/* ========================================================================================================================================
    VIDEO SOURCES MAPPING
    Instructions: Replace video paths with your actual file paths
-   ================================ */
+   ======================================================================================================================================== */
 const videoSources = {
-    'landing':'videos/Railway_Section.mp4',  // 5 second intro video
-    'video1': 'videos/First_Transition.mp4',  // 34 seconds - Site tour
-    'video2': 'videos/video-2.mp4',          // 9 seconds - Site tour
-    'video3': 'videos/video-3.mp4'           // 45 seconds - Site tour
+    'landing':'videos/Railway_Section.mp4',             // 5 second intro video
+    'video1': 'videos/First_Transition.mp4',           // 34 seconds - Site tour
+    'video2': 'videos/Fourth_Transition.mp4',         // 9 seconds - Site tour
+    'video3': 'videos/Second_transition.mp4'         // 45 seconds - Site tour
 };
 
 /* ================================
@@ -351,7 +351,13 @@ function loadSpatialContent(category) {
         if (category === 'housing') {
             addClusterLabels();
         }
+    } else {
+        // Show cluster labels for housing even in scattered mode
+        if (category === 'housing') {
+            addClusterLabels();
+        }
     }
+    
 
     // Create items
     items.forEach((item, index) => {
@@ -394,6 +400,12 @@ function loadSpatialContent(category) {
         // Store original position
         contentItem.dataset.originalX = itemPosition.x;
         contentItem.dataset.originalY = itemPosition.y;
+
+        // Set dynamic z-index based on vertical position (items lower on screen appear on top)
+        if (!showPath) {
+            const baseZIndex = 15 + Math.floor(itemPosition.y / 2);
+            contentItem.style.zIndex = baseZIndex;
+        }
         
         if (showPath) {
             // Start hidden for animation
@@ -407,7 +419,24 @@ function loadSpatialContent(category) {
         contentItem.addEventListener('click', (e) => {
             e.stopPropagation();
             if (!videoMode) {
+                // Bring item forward immediately on click
+                contentItem.style.zIndex = '150';
                 focusItem(contentItem, index);
+            }
+        });
+        
+        // Also bring forward on mouseenter for better accessibility
+        contentItem.addEventListener('mouseenter', () => {
+            if (!focusedItem && !videoMode) {
+                contentItem.style.zIndex = '100';
+            }
+        });
+        
+        contentItem.addEventListener('mouseleave', () => {
+            if (!focusedItem && !videoMode && !showPath) {
+                // Reset to position-based z-index
+                const baseZIndex = 15 + Math.floor(itemPosition.y / 2);
+                contentItem.style.zIndex = baseZIndex;
             }
         });
 
@@ -519,26 +548,69 @@ function generateClusteredPath(items) {
 }
 
 
-// Random scattered positioning for housing (centered on viewport)
+// Random scattered positioning for housing (grouped by typology with collision avoidance)
 function generateScatteredHousingPath(items) {
     const positions = [];
-    const centerX = 50;
-    const centerY = 50;
-    const maxSpreadX = 35; // How far from center horizontally
-    const maxSpreadY = 25; // How far from center vertically
+    
+    // Define cluster centers for each typology in scattered mode
+    const clusterCenters = [
+        { x: 20, y: 48 },  // Typology 1 - Left region
+        { x: 50, y: 48 },  // Typology 2 - Center region
+        { x: 80, y: 48 }   // Typology 3 - Right region
+    ];
+    
+    // Counter for items per typology
+    const typologyCounts = [0, 0, 0];
     
     items.forEach((item, index) => {
-        // Generate random position centered around middle of viewport
-        const randomX = centerX + (Math.random() - 0.5) * maxSpreadX * 2;
-        const randomY = centerY + (Math.random() - 0.5) * maxSpreadY * 2;
+        const typology = item.typology - 1; // 0, 1, or 2
+        const cluster = clusterCenters[typology];
+        const itemInTypology = typologyCounts[typology];
+        typologyCounts[typology]++;
         
-        positions.push({
-            x: Math.max(10, Math.min(90, randomX)), // Clamped between 10% and 90%
-            y: Math.max(20, Math.min(80, randomY))  // Clamped between 20% and 80%
-        });
+        if (itemInTypology === 0) {
+            // First item of each typology - center of cluster
+            positions.push({
+                x: cluster.x,
+                y: cluster.y
+            });
+        } else {
+            // Arrange remaining items in expanding spiral pattern with more spacing
+            const angle = (itemInTypology * 2.8) + (typology * 0.7); // More staggered angles
+            const radius = 8 + (itemInTypology * 2.8); // Larger expanding radius for more space
+            
+            const offsetX = Math.cos(angle) * radius;
+            const offsetY = Math.sin(angle) * radius * 0.8; // Slightly flatter vertically
+            
+            let finalX = cluster.x + offsetX;
+            let finalY = cluster.y + offsetY;
+            
+            // Ensure within safe bounds with extra margin
+            finalX = Math.max(13, Math.min(87, finalX));
+            finalY = Math.max(28, Math.min(68, finalY));
+            
+            positions.push({
+                x: finalX,
+                y: finalY
+            });
+        }
     });
     
     return positions;
+}
+
+
+// Check if position overlaps with existing positions
+function isPositionValid(newPos, existingPositions, minDistance = 15) {
+    for (let pos of existingPositions) {
+        const dx = newPos.x - pos.x;
+        const dy = newPos.y - pos.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < minDistance) {
+            return false;
+        }
+    }
+    return true;
 }
 
 
@@ -592,11 +664,19 @@ function drawPathNetwork(positions, isSecondary = false) {
 // Add cluster labels for housing typologies
 function addClusterLabels() {
     const labels = ['Typology 1', 'Typology 2', 'Typology 3'];
-    const positions = [
-        { x: '18%', y: '12%' },
-        { x: '50%', y: '12%' },
-        { x: '82%', y: '12%' }
-    ];
+    const positions = showPath ? 
+        // Positions for path mode
+        [
+            { x: '20%', y: '12%' },
+            { x: '50%', y: '12%' },
+            { x: '80%', y: '12%' }
+        ] :
+        // Positions for scattered mode
+        [
+            { x: '22%', y: '15%' },
+            { x: '50%', y: '15%' },
+            { x: '78%', y: '15%' }
+        ];
 
     labels.forEach((label, index) => {
         const clusterLabel = document.createElement('div');
@@ -659,9 +739,16 @@ function resetItems() {
     }
 
     activeItems.forEach((item, i) => {
-        item.classList.remove('fade-in'); // Remove fade animation
+        item.classList.remove('fade-in');
         item.className = showPath ? 'content-item thumbnail' : 'content-item scattered';
-        item.style.opacity = '0.6'; // Return to normal visibility
+        item.style.opacity = '0.7';
+        
+        // Reset z-index for scattered items
+        if (!showPath) {
+            const originalY = parseFloat(item.dataset.originalY);
+            const baseZIndex = 15 + Math.floor(originalY / 2);
+            item.style.zIndex = baseZIndex;
+        }
     });
 
     if (!showPath) {
@@ -875,9 +962,9 @@ modalOverlay.addEventListener('click', () => {
 
 
 
-/* ==============================================================================================================================
+/* ====================================================================================================================================================
    KEYBOARD SHORTCUTS
-   ============================================================================================================================== */
+   ==================================================================================================================================================== */
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && currentMode === 'explore') {
         if (focusedItem) {
@@ -889,12 +976,52 @@ document.addEventListener('keydown', (e) => {
 });
 
 
-/* ================================================================================================================================
+/* ===================================================================================================================================================
    INITIALIZATION
-   ================================================================================================================================ */
+   =================================================================================================================================================== */
 window.addEventListener('load', () => {
     updateCurrentSection();
     // Ensure mode indicator and menu are hidden on load
     modeIndicator.classList.remove('visible');
     menuTrigger.classList.remove('visible');
+    
+    // Lock scrolling until landing page animations complete
+    document.body.classList.add('scroll-locked');
+    
+    // Unlock scrolling after all animations complete (13.5s total)
+    setTimeout(() => {
+        document.body.classList.remove('scroll-locked');
+        // Scroll indicator animation continues from CSS
+    }, 13500); // 13.5 seconds - when all animations complete
+});
+
+
+
+/* ===================================================================================================================================================
+   SCROLL LOCK ON LANDING PAGE
+   Prevents all scroll attempts during landing animations
+   =================================================================================================================================================== */
+function preventScroll(e) {
+    if (document.body.classList.contains('scroll-locked')) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    }
+}
+
+// Prevent mouse wheel scrolling
+window.addEventListener('wheel', preventScroll, { passive: false });
+
+// Prevent touch scrolling on mobile
+window.addEventListener('touchmove', preventScroll, { passive: false });
+
+// Prevent keyboard scrolling (arrow keys, space, page up/down)
+window.addEventListener('keydown', (e) => {
+    if (document.body.classList.contains('scroll-locked')) {
+        const scrollKeys = ['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '];
+        if (scrollKeys.includes(e.key)) {
+            e.preventDefault();
+            return false;
+        }
+    }
 });
