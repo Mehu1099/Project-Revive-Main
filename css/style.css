@@ -1007,8 +1007,8 @@ p {
 
 /* Depth States */
 .content-item.thumbnail {
-    width: 120px;
-    height: 90px;
+    width: 160px;
+    height: 120px;
     opacity: 0.6;
     z-index: 10;
 }
@@ -1120,11 +1120,11 @@ p {
 
 .content-item.thumbnail .item-number {
     display: flex;
-    width: 30px;
-    height: 30px;
-    font-size: 0.85rem;
-    top: -12px;
-    left: -12px;
+    width: 35px;
+    height: 35px;
+    font-size: 0.95rem;
+    top: -14px;
+    left: -14px;
     animation: number-pulse 2s infinite;
 }
 
@@ -1212,8 +1212,8 @@ p {
 }
 
 .content-item.thumbnail .item-label {
-    font-size: 0.75rem;
-    padding: 8px;
+    font-size: 0.85rem;
+    padding: 10px;
 }
 
 /* Cluster Labels */
